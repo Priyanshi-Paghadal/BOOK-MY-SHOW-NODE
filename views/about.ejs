@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= movie.title %>
+    </title>
+    <link rel="stylesheet" href="/fonts/roboto/stylesheet.css">
+    <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="/fonts/remixicon/remixicon.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <!-- HEADER -->
+
+    <%- include('partials/header') %>
+
+    <!-- ABOUT -->
+
+    <section class="about">
+        <div class="about-bg relative" >
+            <img src="/<%= movie.bgPoster %>" alt="bgPoster" title="bgPoster" width="100%" height="500" class="about-bg-img">
+            <div class="about-img-overlay absolute">
+                <div class="container">
+                    <div class="flex align-items-center">
+                        <div class="col-3">
+                            <div class="about-img">
+                                <img src="/<%= movie.poster %>" alt="poster" title="poster" width="100%" height="400">
+                                <span class="img-overlay">In cinemas</span>
+                            </div>
+                        </div>
+                        <div class="col-9">
+                            <div class="about-img-content">
+                                <h2>
+                                    <%= movie.title %>
+                                </h2>
+                                <div class="rate">
+                                    <ul class="flex justify-content-between align-items-center">
+                                        <li>
+                                            <a href="javascript:void(0)" class="flex align-items-center">
+                                                <i class="ri-star-fill"></i>
+                                                <h6>
+                                                    <%= movie.rating %>/10
+                                                </h6>
+                                                <span>(21.9k Votes) <i class="ri-arrow-right-s-line"></i></span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0)" class="rate-btn">Rate Now</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <a href="javascript:void(0)" class="format-btn">
+                                    <%= movie.format %>
+                                </a>
+                                <a href="javascript:void(0)" class="format-btn">
+                                    <%= movie.language %>
+                                </a>
+                                <div class="details flex align-items-center">
+                                    <p>
+                                        <%= movie.duration %>
+                                    </p>
+                                    <i class="ri-checkbox-blank-circle-fill"></i>
+                                    <a href="javascript:void(0)">
+                                        <%= movie.genre %>
+                                    </a>
+                                    <i class="ri-checkbox-blank-circle-fill"></i>
+                                    <p>
+                                        <%= movie.certificate %>
+                                    </p>
+                                    <i class="ri-checkbox-blank-circle-fill"></i>
+                                    <p>
+                                        <%= movie.releaseDate %>
+                                    </p>
+                                </div>
+                                <a href="/ticket/buy" class="book-btn">Book tickets</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="about-content">
+            <div class="container">
+                <h2>About the movie</h2>
+                <p>
+                    <%= movie.discription %>
+                </p>
+            </div>
+        </div>
+
+    </section>
+
+</body>
+
+</html>

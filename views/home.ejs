@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Tickets, Plays, Sports, Events & Cinemas near Surat - BookMyShow Surat.</title>
+    <link rel="stylesheet" href="/fonts/roboto/stylesheet.css">
+    <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="/css/slick.css">
+    <link rel="stylesheet" href="/css/slick-theme.css">
+    <link rel="stylesheet" href="/fonts/remixicon/remixicon.css">
+    <link rel="stylesheet" href="/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <%- include('partials/header') %>
+
+        <!-- SLIDER -->
+
+        <section class="slider">
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="/img/slider1.avif" alt="slide1" title="slide1">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="/img/slider2.avif" alt="slide2" title="slide2">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="/img/slider3.avif" alt="slide3" title="slide3">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="/img/slider4.avif" alt="slide4" title="slide4">
+                    </div>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
+
+        <!-- MOVIES -->
+
+        <section class="movies">
+            <div class="container">
+                <div class="movies-title">
+                    <h2>Recommanded Movies</h2>
+                </div>
+                <div class="movies-inner">
+                    <div class="responsive">
+
+                        <% movies.map((item)=>{ %>
+                            <div class="movie-item">
+                                <div class="movie-img relative">
+                                    <a href="/movie/about/<%= item._id %>">
+                                        <img src="<%= item.poster %>" alt="poster" title="poster" width="100%"
+                                            height="400">
+                                    </a>
+                                    <% if(item.promoted=='Yes' ){ %>
+                                        <span class="promote absolute"> PROMOTED</span>
+                                        <% } %>
+                                </div>
+                                <div class="movie-content">
+                                    <h3>
+                                        <%= item.title %>
+                                    </h3>
+                                    <p>
+                                        <%= item.genre %>
+                                    </p>
+                                </div>
+                            </div>
+                            <% }) %>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <script src="/js/jquery-1.11.0.min.js"></script>
+        <script src="/js/swiper-bundle.min.js"></script>
+        <script src="/js/jquery-migrate-1.2.1.min.js"></script>
+        <script src="/js/slick.min.js"></script>
+        <script src="/js/home.js"></script>
+</body>
+
+</html>

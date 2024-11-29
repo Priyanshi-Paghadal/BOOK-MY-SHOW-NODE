@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Movies</title>
+    <link rel="stylesheet" href="/fonts/roboto/stylesheet.css">
+    <link rel="stylesheet" href="/fonts/remixicon/remixicon.css">
+    <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="/css/form.css">
+</head>
+
+<body>
+    <div class="main">
+        <div class="container">
+            <h1>Add Movies : </h1>
+            <form action="/movie/addMovie" method="POST" enctype="multipart/form-data">
+
+                <label>Title :-</label>
+                <input type="text" id="title" name="title" placeholder="Enter Movie Name">
+
+                <label>Genres :-</label>
+                <div class="row">
+                    <div class="flex align-items-center">
+                        <input type="checkbox" name="genre" value="Drama"><span>Drama</span>
+                    </div>
+                    <div class="flex align-items-center">
+                        <input type="checkbox" name="genre" value="Action"><span>Action</span>
+                    </div>
+                    <div class="flex align-items-center">
+                        <input type="checkbox" name="genre" value="Comedy"><span>Comedy</span>
+                    </div>
+                    <div class="flex align-items-center">
+                        <input type="checkbox" name="genre" value="Family"><span>Family</span>
+                    </div>
+                    <div class="flex align-items-center">
+                        <input type="checkbox" name="genre" value="Romentic"><span>Romentic</span>
+                    </div>
+                    <div class="flex align-items-center">
+                        <input type="checkbox" name="genre" value="Crime"><span>Crime</span>
+                    </div>
+                    <div class="flex align-items-center">
+                        <input type="checkbox" name="genre" value="Thriller"><span>Thriller</span>
+                    </div>
+                    <div class="flex align-items-center">
+                        <input type="checkbox" name="genre" value="Adventure"><span>Adventure</span>
+                    </div>
+                    <div class="flex align-items-center">
+                        <input type="checkbox" name="genre" value="Fantasy"><span>Fantasy</span>
+                    </div>
+                    <div class="flex align-items-center">
+                        <input type="checkbox" name="genre" value="Period"><span>Period</span>
+                    </div>
+                    <div class="flex align-items-center">
+                        <input type="checkbox" name="genre" value="Horror"><span>Horror</span>
+                    </div>
+                    <div class="flex align-items-center">
+                        <input type="checkbox" name="genre" value="Psychological"><span>Psychological</span>
+                    </div>
+                    <div class="flex align-items-center">
+                        <input type="checkbox" name="genre" value="Musical"><span>Musical</span>
+                    </div>
+                    <div class="flex align-items-center">
+                        <input type="checkbox" name="genre" value="Historical"><span>Historical</span>
+                    </div>
+                    <div class="flex align-items-center">
+                        <input type="checkbox" name="genre" value="Social"><span>Social</span>
+                    </div>
+                    <div class="flex align-items-center">
+                        <input type="checkbox" name="genre" value="Animation"><span>Animation</span>
+                    </div>
+                    <div class="flex align-items-center">
+                        <input type="checkbox" name="genre" value="Biography"><span>Biography</span>
+                    </div>
+                </div>
+
+                <label>Format :-</label>
+                <div class="row">
+                    <div class="flex align-items-center">
+                        <input type="checkbox" name="format" id="format" value="2D"><span>2D</span>
+                    </div>
+                    <div class="flex align-items-center">
+                        <input type="checkbox" name="format" id="format" value="3D"><span>3D</span>
+                    </div>
+                    <div class="flex align-items-center">
+                        <input type="checkbox" name="format" id="format" value="4DX"><span>4DX</span>
+                    </div>
+                    <div class="flex align-items-center">
+                        <input type="checkbox" name="format" id="format" value="4DX 3D"><span>4DX 3D</span>
+                    </div>
+                </div>
+
+                <label>Duration :-</label>
+                <input type="text" name="duration" id="" value="" placeholder="Enter Movie Length">
+
+                <label>Language :-</label>
+                <div class="row">
+                    <div class="flex align-items-center">
+                        <input type="checkbox" name="language" value="Hindi"><span>Hindi</span>
+                    </div>
+                    <div class="flex align-items-center">
+                        <input type="checkbox" name="language" value="Gujarati"><span>Gujarati</span>
+                    </div>
+                    <div class="flex align-items-center">
+                        <input type="checkbox" name="language" value="English"><span>English</span>
+                    </div>
+                    <div class="flex align-items-center">
+                        <input type="checkbox" name="language" value="Tamil"><span>Tamil</span>
+                    </div>
+                    <div class="flex align-items-center">
+                        <input type="checkbox" name="language" value="Telugu"><span>Telugu</span>
+                    </div>
+                </div>
+
+                <label>Certificate :-</label>
+                <div class="row">
+                    <div class="flex align-items-center">
+                        <input type="radio" name="certificate" value="U/A">U/A
+                    </div>
+                    <div class="flex align-items-center">
+                        <input type="radio" name="certificate" value="U">U
+                    </div>
+                    <div class="flex align-items-center">
+                        <input type="radio" name="certificate" value="A">A
+                    </div>
+                    <div class="flex align-items-center">
+                        <input type="radio" name="certificate" value="S">S
+                    </div>
+                </div>
+
+                <label>Promoted :-</label>
+                <div class="row">
+                    <div class="flex align-items-center">
+                        <input type="radio" name="promoted" value="Yes">Yes
+                    </div>
+                    <div class="flex align-items-center">
+                        <input type="radio" name="promoted" value="No">No
+                    </div>
+                </div>
+
+                <label>Rating :-</label>
+                <input type="text" id="rating" placeholder="Enter Movie Rating" name="rating">
+
+                <label>Release Date :-</label>
+                <input type="date" id="date" name="releaseDate">
+
+                <label>Poster :-</label>
+                <input type="file" id="poster" accept="image/*" name="poster">
+
+                <label>Background Poster :-</label>
+                <input type="file" id="bgPoster" accept="image/*" name="bgPoster">
+
+                <label>Discription :-</label>
+                <textarea name="discription" id="discription" placeholder="Enter Movie Discription" rows="5"></textarea>
+
+                <button type="submit">Add Movie</button>
+                <a href="/" class="flex"> <i class="ri-arrow-left-line"></i> Back To Home Page </a>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

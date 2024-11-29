@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto';
+    font-weight: 300;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+a {
+    display: inline-block;
+    text-decoration: none;
+}
+
+.container {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.flex {
+    display: flex;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.justify-content-between {
+    justify-content: space-between;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.absolute {
+    position: absolute;
+}
+
+.relative {
+    position: relative;
+}
+
+/* FORM */
+
+h1 {
+    text-align: center;
+    margin: 50px 0;
+    color: #f84464;
+}
+
+.main {
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100vh;
+    color: #000;
+    overflow-y: auto;
+    background: url('/img/form-bg.avif'), rgba(255, 255, 255, 0.9);
+    background-blend-mode: overlay;
+    background-position: 60%;
+}
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    border: 1px solid gainsboro;
+    padding: 20px 50px;
+    backdrop-filter: blur(3px);
+}
+
+label {
+    display: block;
+    margin: 20px 0;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+input:not([type="checkbox"]):not([type="radio"]):not([type="file"]) {
+    padding: 10px 20px;
+    outline: none;
+    display: block;
+    border-radius: 6px;
+    font-size: 16px;
+    border: 1px solid rgb(193, 190, 190);
+    width: 100%;
+}
+
+input[type="file"] {
+    font-size: 15px;
+}
+
+input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    margin-right: 7px;
+}
+
+input[type="radio"] {
+    width: 16px;
+    height: 16px;
+    margin-right: 7px;
+}
+
+button {
+    width: 100%;
+    padding: 14px 20px;
+    color: white;
+    background-color: #f84464;
+    border-radius: 8px;
+    border: none;
+    border: 1px solid #f84464;
+    margin: 10px 0 10px 0;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+textarea {
+    width: 100%;
+    border: 1px solid rgb(193, 190, 190);
+    outline: none;
+    font-size: 16px;
+    padding: 10px 20px;
+}
+
+form .row .flex {
+    margin: 0 35px 10px 0;
+}
+
+form .row .flex span {
+    font-size: 17px;
+}
+
+form a {
+    color: #000;
+    justify-content: center;
+    text-align: center;
+    margin: 15px 0 50px 0;
+}

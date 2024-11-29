@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="container">
+            <div class="flex justify-content-between align-items-center">
+                <ul class="flex align-items-center">
+                    <li>
+                        <a href="javascript:void(0)" class="logo">
+                            <img src="/img/logo.svg" alt="logo" title="logo" width="115">
+                        </a>
+                    </li>
+                    <li>
+                        <form action="" class="relative">
+                            <i class="ri-search-line absolute"></i>
+                            <input type="text" placeholder="Search for Movies, Events, Plays, Sports and Activities"
+                                class="flex align-items-center">
+                        </form>
+                    </li>
+                </ul>
+                <ul class="flex">
+                    <li>
+
+                        <% if(token.authToken){ %>
+                            <a href="/ticket/buy" class="btn">user</a>
+                            <% }else{ %>
+                                <a href="/user/login" class="btn">Sign In</a>
+                                <% } %>
+                    </li>
+                    <li>
+                        <a href="/movie/form" class="btn">Add Movie</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+</body>
+
+</html>
