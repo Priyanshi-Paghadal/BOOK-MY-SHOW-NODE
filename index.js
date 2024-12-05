@@ -11,6 +11,7 @@ const connection = require("./Connection/db");
 const movieRoutes = require("./Controller/routes.movie");
 const userRoutes = require("./Controller/routes.user");
 const ticketRoutes = require("./Controller/routes.ticket");
+const authMiddleware = require("./Middleware/middleware");
 const movieModel = require("./Model/model.movie");
 
 app.use(express.urlencoded({ extended: true }))
@@ -21,13 +22,14 @@ app.use(express.static('public'));
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 app.use("/movie", movieRoutes);
 app.use("/user", userRoutes);
-app.use("/ticket",ticketRoutes);
+app.use("/ticket", ticketRoutes);
 
-app.get('/', async (req, res) => {
+app.get('/', authMiddleware, async (req, res) => {
     let allMovies = await movieModel.find();
     console.log(allMovies);
     res.render("home", {
-        movies: allMovies
+        movies: allMovies,
+        token: req.token || null,
     });
 })
 

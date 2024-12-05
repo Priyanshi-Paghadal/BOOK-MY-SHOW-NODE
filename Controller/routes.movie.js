@@ -75,7 +75,10 @@ movieRoutes.get("/about/:id", async (req, res) => {
         }
         console.log(movie);
 
-        res.render("about", { movie }); // Render the movie details page
+        res.render("about", {
+            movie,
+            token: req.token || null,
+        }); // Render the movie details page
     } catch (error) {
         console.log("Error fetching movie:", error);
         res.status(500).send("Internal Server Error");

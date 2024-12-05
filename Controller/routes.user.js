@@ -1,5 +1,6 @@
 const express = require('express');
 const userModel = require("../Model/model.user");
+const authMiddleware = require("../Middleware/middleware");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const userRoutes = express.Router();
@@ -12,9 +13,9 @@ userRoutes.get("/login", (req, res) => {
     res.render("login");
 })
 
-userRoutes.get("/", (req, res) => {
+userRoutes.get("/", authMiddleware, (req, res) => {
     res.render("home");
-})
+});
 
 userRoutes.post("/register", async (req, res) => {
     try {
@@ -45,8 +46,9 @@ userRoutes.post("/loginData", async (req, res) => {
         if (!passMatch) {
             return res.status(401).json({ msg: "Password not match" });
         }
-        const token = jwt.sign({ course: 'node' }, 'node','node', { expiresIn: '1h' });
-        res.cookie("authToken", token ,{ httpOnly: true });
+        const token = jwt.sign({ userId: checkuser._id }, 'node', { expiresIn: '1h' });
+
+        res.cookie("token", token, { httpOnly: true, secure: true });
         res.redirect("/");
     } catch (error) {
         console.log("User not found. ", error);
