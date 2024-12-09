@@ -29,19 +29,33 @@ movieRoutes.post("/addMovie", uploadFields, async (req, res) => {
         console.log(req.body);
         console.log(req.files);
 
+        // Validate uploaded files
         if (!req.files.poster || !req.files.bgPoster) {
             return res.status(400).json({ error: "Both poster and bgPoster files are required." });
         }
 
-        if (!req.body.title || !req.body.genre || !req.body.format || !req.body.duration || !req.body.language || !req.body.promoted || !req.body.certificate || !req.body.rating || !req.body.releaseDate || !releaseDate.body.discription) {
-            res.status(400).json({ msg: "All fileds are required." });
+        // Validate request body
+        if (!req.body.title ||
+            !req.body.genre ||
+            !req.body.format ||
+            !req.body.duration ||
+            !req.body.language ||
+            !req.body.promoted ||
+            !req.body.certificate ||
+            !req.body.rating ||
+            !req.body.releaseDate ||
+            !req.body.discription) {
+            return res.status(400).json({ msg: "All fields are required." });
         }
 
+        // Get file paths
         const poster = req.files.poster[0].path;
         const bgPoster = req.files.bgPoster[0].path;
 
+        // Extract other fields
         const { title, genre, format, duration, language, promoted, certificate, rating, releaseDate, discription } = req.body;
 
+        // Create and save the movie
         const movie = new movieModel({
             title,
             genre,
@@ -56,14 +70,18 @@ movieRoutes.post("/addMovie", uploadFields, async (req, res) => {
             poster,
             bgPoster
         });
-        const savedMovie = await movie.save();
-        console.log(savedMovie)
-        res.redirect("form");
 
+        const savedMovie = await movie.save();
+        console.log(savedMovie);
+
+        // Redirect to form after success
+        res.redirect("form");
     } catch (error) {
-        console.log("Movie Can Not Added.", error);
+        console.log("Movie Can Not Be Added.", error);
+        res.status(500).send("Internal Server Error");
     }
 });
+
 
 movieRoutes.get("/about/:id", async (req, res) => {
     try {

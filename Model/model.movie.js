@@ -10,9 +10,9 @@ const movieSchema = new mongoose.Schema({
     certificate: String,
     rating: String,
     releaseDate: String,
+    discription: String,
     poster: String,
     bgPoster: String,
-    discription: String
 })
 
 const movieModel = mongoose.model("MovieModel", movieSchema);
